@@ -1,0 +1,18 @@
+services:
+  shastore:
+    container_name: shastorecontainer
+    image: shastore
+    build:
+      context: .
+    ports:
+      - 80:80
+    expose:
+      - 80
+    networks:
+      - internalnetwork
+networks:
+  internalnetwork:
+    driver: bridge
+
+
+
