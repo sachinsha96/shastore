@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Front-end') {
             steps {
-                sh 'docker compose up'
+                sh 'docker.build("sha_store-"+"$BUILD_NUMBER")'
             }
         }
     }
