@@ -1,11 +1,4 @@
 pipeline {
-    agent {
-        docker { image 'node:22.14.0-alpine3.21' }
-    }
-    options {
-        // Timeout counter starts AFTER agent is allocated
-        timeout(time: 15, unit: 'MINUTES')
-    }
     stages {
         stage('Example') {
             steps {
@@ -13,6 +6,13 @@ pipeline {
             }
         }
         stage('Front-end') {
+            agent {
+        docker { image 'node:22.14.0-alpine3.21' }
+    }
+    options {
+        // Timeout counter starts AFTER agent is allocated
+        timeout(time: 15, unit: 'MINUTES')
+    }
             steps {
                 sh 'node --version'
             }
