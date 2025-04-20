@@ -11,7 +11,7 @@ pipeline {
         stage('Push Docker image'){
             steps{
                 script{
-                    docker.Image.push('latest')
+                    docker.push('latest')
                 }
             }
         }
