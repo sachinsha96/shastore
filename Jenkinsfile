@@ -1,16 +1,18 @@
 pipeline {
     agent any
     stages {
-        stage('Example') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Front-end') {
+        stage('Build docker file') {
             steps {
                 script{
                     docker.build("sha_store-"+"$BUILD_NUMBER")
                 } 
+            }
+        }
+        stage('Push Docker image'){
+            steps{
+                script{
+                    docker.Image.push('latest')
+                }
             }
         }
     }
