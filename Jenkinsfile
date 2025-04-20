@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                echo 'Hello World'
+                sh 'org.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS=true'
             }
         }
         stage('Front-end') {
