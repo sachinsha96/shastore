@@ -4,11 +4,13 @@ pipeline {
        
         stage('Push Docker image'){
             steps {
+                script{
             node{
                 checkout scm
                 def customImage = docker.build("sha_store-"+"$BUILD_NUMBER")
                 customImage.push()
             }
+                }
             }
         }
     }
