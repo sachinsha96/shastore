@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Front-end') {
             steps {
-                sh 'docker --versions'
+                sh 'docker versions'
             }
         }
     }
