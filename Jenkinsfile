@@ -23,6 +23,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'e9176601-8f14-42f4-94cb-76bd90d1cd5f', passwordVariable: 'docpassword', usernameVariable: 'sha-docker')]) {    
                 sh 'docker login -u sachinsha96 -p ${docpassword}'            
                 sh 'docker pull sachinsha96/shastore'
+                docker run -d -p 7000:80 --name='sha-latest-1' sachinsha96/shastore
                 }
                 }
             }
