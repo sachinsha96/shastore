@@ -19,7 +19,7 @@ pipeline {
                 // }
                 // }
                 script{
-                    sh 'docker compose up'
+                    sh 'docker-compose up'
                 }
             }
             
