@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment{
-        $USERNAME = 'sachinsha96';
-        $REG_URL = 'sachinsha96/shastore'
+        USERNAME = 'sachinsha96';
+        REG_URL = 'sachinsha96/shastore'
     }
     stages {
        
