@@ -13,7 +13,7 @@ pipeline {
                 sh 'docker login -u sachinsha96 -p ${docpassword}'            
                 node{
                 checkout scm
-                def customImage = docker.build("sachinsha96/shastore",$BUILD_ID)
+                def customImage = docker.build("sachinsha96/shastore",'.')
                 customImage.push()
                 }
                 }
